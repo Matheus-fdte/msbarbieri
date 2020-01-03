@@ -5,9 +5,9 @@ module.exports = {
   siteMetadata,
   plugins: [
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "posts",
+        name: 'posts',
         path: `${__dirname}/content/posts`
       },
     },
@@ -62,8 +62,8 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
-    "gatsby-plugin-catch-links",
-    "gatsby-transformer-remark",
+    'gatsby-plugin-catch-links',
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-plugin-sitemap'
     },
@@ -111,4 +111,4 @@ module.exports = {
     },
     'gatsby-plugin-styled-components'
   ]
-}
+};
