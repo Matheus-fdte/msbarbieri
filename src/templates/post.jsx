@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { graphql, Link } from "gatsby";
-import _ from "lodash";
-import Layout from "../components/layout";
+import React, { Component } from 'react';
+import { graphql, Link } from 'gatsby';
+import _ from 'lodash';
+import Layout from '../components/layout';
 
 export default class Post extends Component {
   render() {
@@ -15,14 +15,15 @@ export default class Post extends Component {
           <h2>{title}</h2>
           <p>{tags.map(tag => <Link key={tag} to={`/tag/${_.kebabCase(tag)}`}>
             <span className="ml-1 badge badge-dark ">{tag}</span>
-          </Link>)}</p>
+          </Link>)}
+          </p>
           <div>
             <p dangerouslySetInnerHTML={{ __html: html }} />
           </div>
           <p>{date}</p>
         </div>
       </Layout>
-    )
+    );
   }
 };
 

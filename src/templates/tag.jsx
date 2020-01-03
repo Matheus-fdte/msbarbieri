@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/layout";
+import React, { Component } from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/layout';
 import Posts from '../components/posts';
 
 export default class Tag extends Component {
@@ -15,7 +15,7 @@ export default class Tag extends Component {
           <Posts data={data} />
         </div>
       </Layout>
-    )
+    );
   }
 };
 

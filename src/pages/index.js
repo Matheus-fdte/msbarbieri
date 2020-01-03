@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/layout";
+import React, { Component } from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/layout';
 import Posts from '../components/posts';
 import 'minireset.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -13,7 +13,7 @@ export default class Index extends Component {
       <Layout>
         <Posts data={data} />
       </Layout>
-    )
+    );
   }
 };
 

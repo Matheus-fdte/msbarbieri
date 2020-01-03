@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import Img from 'gatsby';
+import Img, { Link } from 'gatsby';
+
 
 export default ({ data }) => {
   const { edges } = data.allMarkdownRemark;
@@ -19,5 +19,5 @@ export default ({ data }) => {
     <div className="posts">
       {posts}
     </div>
-  )
-}
+  );
+};
