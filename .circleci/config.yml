@@ -2,8 +2,7 @@ version: 2
 jobs:
   build:
     branches:
-      ignore:
-        - gh-pages
+      - master
     docker:
       - image: circleci/node:8
     working_directory: ~/repo
@@ -29,9 +28,6 @@ jobs:
             if [ $CIRCLE_BRANCH == $SOURCE_BRANCH ]; then
               git config --global user.email $GH_EMAIL
               git config --global user.name $GH_NAME
-
-              git clone $CIRCLE_REPOSITORY_URL out
-
               npm install -g --silent gh-pages@2.0.1
 
               npm run build
