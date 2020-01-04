@@ -1,25 +1,24 @@
 const siteMetadata = require('./src/data/siteMetadata');
-const { getJobUrl } = require('./src/data/resume/getJobUrl');
 
 module.exports = {
   siteMetadata,
   plugins: [
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'posts',
-        path: `${__dirname}/content/posts`
-      },
-    },
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-responsive-image',
+            resolve: `gatsby-remark-figure-caption`,
+            options: { figureClassName: 'md-figure' },
+          },
+          {
+            resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 740,
             },
           },
           {
@@ -36,19 +35,26 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'UA-61019439-1',
+        trackingId: 'UA-16818992-1',
       },
     },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Matheus Barbieri tech blog',
-        short_name: 'Matheus Barbieri',
+        name: 'Hugo Nogueira',
+        short_name: 'Hugo Nogueira',
         icons: [
           {
-            src: '/images/logo.svg',
+            src: '/logo.svg',
             sizes: 'any',
             type: 'image/svg+xml',
           },
@@ -60,21 +66,19 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-catch-links',
-    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-plugin-sitemap'
     },
     {
       resolve: 'gatsby-plugin-i18n',
       options: {
-        langKeyForNull: 'any',
-        langKeyDefault: 'pt',
+        langKeyForNull: 'en',
+        langKeyDefault: 'en',
         useLangKeyLayout: true,
+        prefixDefault: false,
         markdownRemark: {
-          postPage: 'src/templates/post.jsx',
+          postPage: 'src/templates/blog-post.js',
           query: `
           {
               allMarkdownRemark {
@@ -91,24 +95,27 @@ module.exports = {
           `
         }
       }
-    }, {
+    },
+    {
       resolve: 'gatsby-plugin-i18n-tags',
       options: { // Default options        
-        tagPage: 'src/templates/tag.jsx',
+        tagPage: 'src/templates/tag-page.js',
         tagsUrl: '/tags/',
-        langKeyForNull: 'any'
-      }
-    }, {
-      resolve: 'gatsby-plugin-i18n-readnext',
-      options: { // Default options
-        nPosts: 3
-      }
-    }, {
-      resolve: 'local-plugin-jobs-and-clients',
-      options: {
-        getJobUrl
+        langKeyForNull: 'en',
+        langKeyDefault: 'en',
+        prefixDefault: false
       }
     },
-    'gatsby-plugin-styled-components'
-  ]
+    'gatsby-plugin-styled-components',
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `limelight`,
+          `Poppins:300,400,500,700` // you can also specify font weights and styles
+        ],
+        display: 'swap'
+      }
+    }
+  ],
 };

@@ -1,8 +1,10 @@
 const webpackLodashPlugin = require('lodash-webpack-plugin');
 
 // Add Lodash plugin
-exports.modifyWebpackConfig = ({ config, stage }) => {
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
   if (stage === 'build-javascript') {
-    config.plugin('Lodash', webpackLodashPlugin, null);
+    actions.setWebpackConfig({
+      plugins: [webpackLodashPlugin],
+    });
   }
 };
