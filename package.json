@@ -1,8 +1,8 @@
 {
-  "name": "hugomn",
-  "description": "Hugo Nogueira, Software Engineer, Lead Front-end engineer, Senior ReactJs developer",
+  "name": "matheus",
+  "description": "foo bar baz",
   "version": "1.0.0",
-  "author": "Hugo Nogueira <hugomn@gmail.com>",
+  "author": "matheus barbieri <matheussouzababieri@gmail.com>",
   "dependencies": {
     "gatsby": "2.18.6",
     "gatsby-plugin-google-fonts": "1.0.1",
