@@ -28,7 +28,7 @@
     "predeploy": "npm run build && rm public/*.js.map",
     "deploy": "node scripts/deploy.js",
     "develop": "gatsby develop",
-    "test": "jest",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 0",
     "test:watch": "jest --watch",
     "serve": "npm run build && gatsby serve"
   },
