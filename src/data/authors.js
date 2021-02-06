@@ -1,19 +1,19 @@
 const authors = {
   hugomn: {
-    name: 'Hugo Nogueira',
+    name: 'Matheus Barbieri',
     additionalName: 'hugomn',
     address: 'Berlin CA',
     birthDate: '1986-09-01',
-    birthPlace: 'Juiz de Fora BR',
-    brand: 'Hugo Nogueira, Software Engineer, Lead Front-end engineer, Senior ReactJs developer',
+    birthPlace: 'São Paulo BR',
+    brand: 'Matheus Barbieri, Software Engineer',
     children: '...',
-    email: 'hugomn@gmail.com',
-    familyName: 'Nogueira',
+    email: 'matheussouzabarbieri@gmail.com',
+    familyName: 'Barbierei',
     gender: 'Male',
-    givenName: 'Hugo',
+    givenName: 'Matheus',
     height: '...',
-    homeLocation: 'Berlin',
-    jobTitle: 'Software Engineering Lead',
+    homeLocation: 'São Paulo',
+    jobTitle: 'Software Engineering',
     knows: '...',
     memberOf: '...',
     nationality: 'Brazilian',
@@ -24,15 +24,6 @@ const authors = {
     relatedTo: '...',
     seeks: '...',
     sibling: '...',
-    spouse: {
-      additionalName: 'Lunara Leto Costa',
-      name: 'Lunara Leto Costa',
-      givenName: 'Lunara',
-      familyName: 'Costa',
-      gender: 'Female',
-      nationality: 'Brazilian',
-      homeLocation: 'Berlin'
-    },
     telephone: '...',
     weight: '...',
     workLocation: '...',
@@ -42,21 +33,19 @@ const authors = {
     identifier: '...',
     image: 'http://www.gravatar.com/avatar/9174fca44b5ca403593ac9cb2407e0e7',
     sameAs: 'https://hugomagalhaes.com/en/about/',
-    url: 'https://hugomagalhaes.com/en/about/'
-  }
+    url: 'https://hugomagalhaes.com/en/about/',
+  },
 };
 
 const getAuthor = (id) => {
   const author = {
     ...authors[id],
-    '@type': 'Person'
+    '@type': 'Person',
   };
-  return author
-    ? author
-    : authors[0];
+  return author ? author : authors[0];
 };
 
 module.exports = {
   authors,
-  getAuthor
+  getAuthor,
 };
