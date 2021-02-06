@@ -8,7 +8,7 @@ const authors = {
     brand: 'Matheus Barbieri, Software Engineer',
     children: '...',
     email: 'matheussouzabarbieri@gmail.com',
-    familyName: 'Barbierei',
+    familyName: 'Barbieri',
     gender: 'Male',
     givenName: 'Matheus',
     height: '...',
